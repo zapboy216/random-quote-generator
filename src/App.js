@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { fetchRandomQuote } from './utils/api'; // Update the path as necessary
-import { Button, Typography, Container } from '@mui/material';
+import { Button, Typography, Container, Box } from '@mui/material';
 
 function App() {
   const [quote, setQuote] = useState('');
@@ -18,20 +18,31 @@ function App() {
 
   return (
     <Container maxWidth="sm" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', height: '100vh', justifyContent: 'center' }}>
-    <div id="quote-box" style={{ width: '100%', textAlign: 'center' }}>
+    <Box id="quote-box" sx={{
+      width: '100%',
+      textAlign: 'center',
+      padding: '2rem',
+      bgcolor: 'grey.100', // for a light grey background
+      border: 1,
+      borderColor: 'grey.300',
+      boxShadow: 3, // adjust for desired shadow effect
+      borderRadius: '8px', // optional, for rounded corners
+    }}>
       <Typography id="text" variant="h5" gutterBottom>
         {quote}
       </Typography>
       <Typography id="author" variant="body1" fontStyle="italic" gutterBottom>
         - {author}
       </Typography>
-      <Button id="new-quote" variant="contained" color="primary" style={{ margin: '1rem' }}>
-        New Quote
-      </Button>
-      <Button id="tweet-quote" variant="contained" color="secondary" href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(quote + " - " + author)}`}>
-        Tweet Quote
-      </Button>
-    </div>
+      <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem', marginTop: '1rem' }}>
+        <Button id="new-quote" variant="contained" color="primary" onClick={getNewQuote}>
+          New Quote
+        </Button>
+        <Button id="tweet-quote" variant="contained" color="primary" href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(quote + " - " + author)}`}>
+          Tweet Quote
+        </Button>
+      </div>
+    </Box>
   </Container>
   );
 }
