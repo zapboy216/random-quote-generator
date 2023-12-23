@@ -23,9 +23,9 @@ function App() {
       textAlign: 'center',
       padding: '2rem',
       bgcolor: 'grey.100', // for a light grey background
-      border: 1,
+      border: 2,
       borderColor: 'grey.300',
-      boxShadow: 3, // adjust for desired shadow effect
+      boxShadow: 6, // adjust for desired shadow effect
       borderRadius: '8px', // optional, for rounded corners
     }}>
       <Typography id="text" variant="h5" gutterBottom>
