@@ -17,13 +17,29 @@ function App() {
   }, []);
 
   return (
-    <Container id="quote-box">
-      <Typography id="text">{quote}</Typography>
-      <Typography id="author">{author}</Typography>
-      <Button id="new-quote" onClick={getNewQuote}>New Quote</Button>
-      <Button id="tweet-quote" href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(quote + " - " + author)}`}>Tweet Quote</Button>
-    </Container>
+    <Container maxWidth="sm" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', height: '100vh', justifyContent: 'center' }}>
+    <div id="quote-box" style={{ width: '100%', textAlign: 'center' }}>
+      <Typography id="text" variant="h5" gutterBottom>
+        {quote}
+      </Typography>
+      <Typography id="author" variant="body1" fontStyle="italic" gutterBottom>
+        - {author}
+      </Typography>
+      <Button id="new-quote" variant="contained" color="primary" style={{ margin: '1rem' }}>
+        New Quote
+      </Button>
+      <Button id="tweet-quote" variant="contained" color="secondary" href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(quote + " - " + author)}`}>
+        Tweet Quote
+      </Button>
+    </div>
+  </Container>
   );
 }
 
 export default App;
+
+
+
+
+
+
