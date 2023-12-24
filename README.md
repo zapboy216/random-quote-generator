@@ -1,5 +1,5 @@
 # React Quote Generator
-
+built for freecodecamp challenge
 This project is a quote generator built with React and Material-UI.
 
 ## Getting Started
