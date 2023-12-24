@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { fetchRandomQuote } from './utils/api'; // Update the path as necessary
+import { fetchRandomQuote } from './utils/api';
 import { Button, Typography, Container, Box } from '@mui/material';
 
 function App() {
@@ -26,9 +26,9 @@ function App() {
       border: 2,
       borderColor: 'grey.300',
       boxShadow: 6, // adjust for desired shadow effect
-      borderRadius: '8px', // optional, for rounded corners
+      borderRadius: '8px', //for rounded corners
     }}>
-      <Typography id="text" variant="h5" gutterBottom>
+      <Typography id="text" variant="h4" gutterBottom>
         {quote}
       </Typography>
       <Typography id="author" variant="body1" fontStyle="italic" gutterBottom>
